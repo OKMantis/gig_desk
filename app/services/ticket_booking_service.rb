@@ -12,7 +12,7 @@ class TicketBookingService
     return ServiceResult.failure("Quantity must be at least 1") if @quantity < 1
     return ServiceResult.failure("This concert has already happened") unless @concert.upcoming?
 
-    booking.nil?
+    booking = nil
 
     ActiveRecord::Base.transaction do
       @concert.lock!
