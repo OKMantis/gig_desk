@@ -1,4 +1,4 @@
-class TicketBookingService
+class TicketBookingService < ApplicationService
   class InsufficientTickets < StandardError; end
   class InsufficientFunds < StandardError; end
 

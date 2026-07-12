@@ -1,4 +1,4 @@
-class BookingCancellationService
+class BookingCancellationService < ApplicationService
   def initialize(booking:, reason: "Customer Request")
     @booking = booking
     @reason = reason
