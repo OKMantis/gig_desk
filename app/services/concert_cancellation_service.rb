@@ -7,7 +7,7 @@ class ConcertCancellationService < ApplicationService
   def call
     return ServiceResult.failure("Concert has already started") unless @concert.upcoming?
 
-    result = @concert.bookings.where(status: "confirmed").map do |booking|
+    results = @concert.bookings.where(status: "confirmed").map do |booking|
       BookingCancellationService.call(booking: booking, reason: @reason)
     end
 
