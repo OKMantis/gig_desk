@@ -9,6 +9,6 @@ class Booking < ApplicationRecord
   validates :total_price, numericality: { greater_than_or_equal_to: 0 }
   validates :status, inclusion: { in: STATUSES }
 
-  def confirmed? = status == 0
-  def cancelled? = status == 1
+  def confirmed? = status == "confirmed"
+  def cancelled? = status == "cancelled"
 end
